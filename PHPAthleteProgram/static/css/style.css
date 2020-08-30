@@ -23,3 +23,104 @@ body {
             flex-direction: column;
     min-height: 100vh;
 }
+
+/* Navbar */
+
+    /* Custom Navbar BG color theme */
+.bg-custom {
+    background-color: #323232;
+    border-bottom: 1px solid #282828;
+}
+
+.navbar-brand img {
+    height: 3.2rem;
+}
+
+    /* Navbar links set to default primary color using specificity */
+.navbar .navbar-nav .nav-link {
+    color: #ebf2ff;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #ffe279;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: #ffe279;
+}
+
+.navbar .navbar-toggler {
+    border-color: transparent;
+}
+
+/* Footer */
+
+footer {
+    background-color: #323232;
+    min-height: 3rem;
+    border-top: 1px solid #282828;
+}
+
+footer .row {
+    margin: auto 0;
+}
+
+.additional-links-footer {
+    margin-bottom: 0;
+}
+
+.additional-link {
+    margin-bottom: 0.5rem;
+    list-style: none;
+}
+
+.additional-link a {
+    color: #ebf2ff;
+}
+
+.additional-link a:hover {
+    color: #ffe279;
+    text-decoration: none;
+}
+
+.dev-note {
+    margin: auto 0;
+}
+
+.brand-note p {
+    color: #ebf2ff;
+    margin-bottom: 0.5rem;
+}
+
+.socials {
+    margin: auto 0;
+}
+
+.social-links {
+    margin-bottom: 0.5rem;
+}
+
+.social-links li a i{
+    color: #ebf2ff;
+    font-size: 1.5rem;
+    margin: auto 0;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.social-links li a i:hover {
+    color: #ffe279;
+    font-size: 1.6rem;
+}
+
+/* Global page elements */
+
+.content {
+    margin-top: 77px;
+    -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+}

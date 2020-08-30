@@ -1,0 +1,34 @@
+{% load static %} <!-- Needed to link to static files that are
+ saved in our root static folder in the case of the navbar we
+ need to load our logo so we may link to it in img src below.-->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
+    <!-- Logo -->
+    <a class="navbar-brand" aria-label="Brand Logo & Link to refresh" href="{% url 'index' %}">
+        <img src="{% static 'img/logo.png' %}" alt="Logo" title="PHP Logo">
+    </a>
+    <!-- Toggler Icon on mobile view -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto uppercase">
+{#                {% if user.is_authenticated %}#}
+                    <li class="nav-item {{ home_page }}">
+                        <a class="nav-link" aria-label="Home" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-label="Login" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-label="Register" href="#">Register</a>
+                    </li>
+{#                {% else %}#}
+{#                    #}
+{#                {% endif %}#}
+            </ul>
+    </div>
+</nav>
