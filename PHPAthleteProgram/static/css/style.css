@@ -89,7 +89,7 @@ footer .row {
 
 .brand-note p {
     color: #ebf2ff;
-    margin-bottom: 0.5rem;
+    
 }
 
 .socials {
@@ -123,4 +123,18 @@ footer .row {
     -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+    .brand-note {
+        position: relative;
+    }
+
+    .brand-note p {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
