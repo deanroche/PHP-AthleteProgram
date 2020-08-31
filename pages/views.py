@@ -3,7 +3,12 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'pages/index.html')
+    # context to produce active state of current page in nav-item to user.
+    context = {
+        'home_page': 'active'
+    }
+
+    return render(request, 'pages/index.html', context)
 
 
 def accessibility(request):
