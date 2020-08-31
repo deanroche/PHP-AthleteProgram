@@ -125,6 +125,42 @@ footer .row {
                 flex: 1;
 }
 
+/* Index page */
+
+.welcome-landing {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(0,0,0, 0.5);
+}
+
+.welcome-img {
+    background: url("../img/crossfit.jpg") center no-repeat;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+}
+
+.welcome-txt {
+    color: #f8f8f8;
+    text-shadow: -1px 0 #212121, 0 1px #212121, 1px 0 #212121, 0 -1px #212121;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-txt::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20%;
+    margin: 5px auto;
+    background: #ffe279;
+    border-bottom: 1px solid #000000;
+}
+
 /* Media queries */
 
 @media (min-width: 768px) {
