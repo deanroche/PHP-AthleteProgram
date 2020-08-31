@@ -124,6 +124,49 @@ footer .row {
                 flex: 1;
 }
 
+.brand-img {
+    margin: 1rem 0 2rem;
+}
+
+    /* Bootstrap components custom styling */
+    /* Cards styled inline with Application theme */
+.card {
+    background-color: #323232;
+    margin: 3rem 1rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: -10px -10px 15px 0 rgba(140, 140, 140, 0.1), 10px 10px 15px 0 rgb(40, 40, 40);
+    box-shadow: -10px -10px 15px 0 rgba(140, 140, 140, 0.1), 10px 10px 15px 0 rgb(40, 40, 40);
+    border: none;
+    /* border-box clip path used to prevent background protruding past child elements */
+    background-clip: border-box;
+}
+
+.card-header:first-child {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card-title {
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 1rem;
+}
+
+.card-title::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 30%;
+    margin: 5px auto;
+    background: #efeeee;
+}
+
+.card-body {
+    font-family: "Lato", sans-serif;
+}
+
+.card-list {
+    padding-left: 2.5rem;
+}
+
 /* Index page */
 
 .welcome-landing {
@@ -164,6 +207,13 @@ footer .row {
     background: #ffe279;
     border-bottom: 1px solid #000000;
     animation: moveInRight 2s ease-in-out;
+}
+
+/* Accessibility & Privacy Policy Pages */
+
+.card-subtitle {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 1rem 0;
 }
 
 /* Keyframe animations */
