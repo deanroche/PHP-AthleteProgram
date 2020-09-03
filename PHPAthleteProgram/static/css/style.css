@@ -225,6 +225,7 @@ footer .row {
 
     100% {
         opacity: 1;
+        backface-visibility: hidden;
     }
 }
 
