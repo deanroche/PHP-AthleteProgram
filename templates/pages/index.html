@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %} Welcome {% endblock %}
 
 {% block content %}
@@ -7,6 +9,48 @@
         <div class="row no-gutters">
             <div class="col-sm-12 welcome-img">
                 <h1 class="welcome-txt">Level up through Precision</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center page-separator">
+                <img src="{% static 'img/logo.png' %}" alt="PHP Logo" class="img-fluid">
+            </div>
+        </div>
+        <div class="row cta-cards">
+            <div class="col-sm-12 col-md-6">
+                <div class="card cta-card">
+                    <!-- Anchor tag and empty span used allowing user to click anywhere
+                     inside the card component for navigation. -->
+                    <a href="#">
+                        <span class="div-url-overlay"></span>
+                    </a>
+                    <div class="card-header">
+                        <h4><i class="fas fa-user-plus"></i> User Dashboard</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="cta-card-text">Click anywhere on this card to view your user dashboard. Where you will
+                        find the current program sessions for this week.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="card cta-card">
+                    <!-- Anchor tag and empty span used allowing user to click anywhere
+                     inside the card component for navigation. -->
+                    <a href="#">
+                        <span class="div-url-overlay"></span>
+                    </a>
+                    <div class="card-header">
+                        <h4><i class="fas fa-sign-out-alt"></i> Logout</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="cta-card-text">Click anywhere on this card to Logout. Once logged out
+                        you will need to Login during your next session to gain access to your dashboard.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
