@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+from django.contrib.messages import constants as messages
 import dj_database_url
 from pathlib import Path
 
@@ -139,3 +140,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'PHPAthleteProgram/static')
 ]
+
+# Message tags
+# Setting default class of Error message tag to bootstrap 'danger'.
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
