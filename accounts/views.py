@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
@@ -71,7 +72,7 @@ def login(request):
     return render(request, 'accounts/login.html', context)
 
 
-def logout(request):
+def logout_view(request):
     """
     Logout User from current session & display success message of same.
     :param request:
@@ -89,5 +90,8 @@ def dashboard(request):
     :param request:
     :return:
     """
-    return render(request, 'accounts/dashboard.html')
+    context = {
+        'dashboard-page': 'active'
+    }
 
+    return render(request, 'accounts/dashboard.html', context)

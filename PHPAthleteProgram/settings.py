@@ -36,7 +36,6 @@ ALLOWED_HOSTS = [
     'php-athlete.herokuapp.com'
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
