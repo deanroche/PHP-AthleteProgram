@@ -24,6 +24,16 @@ body {
     min-height: 100vh;
 }
 
+/* Alerts */
+
+.alerts-container {
+    margin-top: 2rem;
+}
+
+.alert {
+    font-family: "Lato", sans-serif;
+}
+
 /* Navbar */
 
     /* Custom Navbar BG color theme */
@@ -153,6 +163,96 @@ footer .row {
     z-index: 1;
 }
 
+    /* Forms */
+.form-control {
+    margin: 1rem 0;
+    border: none;
+    background: none;
+    -webkit-box-shadow: inset -3px -5px 10px 0 rgba(140, 140, 140, 0.1), inset 3px 3px 10px 0 rgb(40, 40, 40);
+            box-shadow: inset -3px -5px 10px 0 rgba(140, 140, 140, 0.1), inset 3px 3px 10px 0 rgb(40, 40, 40);
+    color: #efeeee;
+    font-size: 18px;
+    -webkit-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #ad9d93;
+}
+
+.form-control::-moz-placeholder {
+    color: #ad9d93;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #ad9d93;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #ad9d93;
+}
+
+.form-control::placeholder {
+    color: #ad9d93;
+}
+
+.form-control:focus {
+    -webkit-box-shadow: inset -3px -5px 10px 0 rgba(140, 140, 140, 0.1), inset 3px 3px 10px 0 rgb(40, 40, 40);
+            box-shadow: inset -3px -5px 10px 0 rgba(140, 140, 140, 0.1), inset 3px 3px 10px 0 rgb(40, 40, 40);
+}
+
+.form-control:focus::-webkit-input-placeholder {
+    color: #323232
+}
+
+.form-control:focus::-moz-placeholder {
+    color: #323232
+}
+
+.form-control:focus:-ms-input-placeholder {
+    color: #323232
+}
+
+.form-control:focus::-ms-input-placeholder {
+    color: #323232
+}
+
+.form-control:focus::placeholder {
+    color: #323232
+}
+
+.btn-primary {
+    display: block;
+    margin: 1rem auto;
+    background: -o-linear-gradient(305deg, #7f4e80, #6b3f6c, #512a52);
+    background: linear-gradient(145deg, #7f4e80, #6b3f6c, #512a52);
+    border: none;
+    text-shadow: -1px 0 #6b3f6c, 0 1px #6b3f6c, 1px 0 #6b3f6c, 0 -1px #6b3f6c;
+    -webkit-box-shadow: -3px -3px 10px 0 rgba(140, 140, 140, 0.1), 3px 3px 10px 0 rgba(67,35,68,0.50);
+    box-shadow: -3px -3px 10px 0 rgba(140, 140, 140, 0.1), 3px 3px 10px 0 rgba(67,35,68,0.50);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background: -o-linear-gradient(285deg, #704271, #573158, #512a52);
+    background: linear-gradient(165deg, #704271, #573158, #512a52);
+    border: none;
+    text-shadow: -1px 0 #6b3f6c, 0 1px #6b3f6c, 1px 0 #6b3f6c, 0 -1px #6b3f6c;
+    -webkit-box-shadow: -3px -3px 10px 0 rgba(171, 171, 171, 0.1), 3px 3px 10px 0 rgba(67,35,68,0.50);
+    box-shadow: -3px -3px 10px 0 rgba(171, 171, 171, 0.1), 3px 3px 10px 0 rgba(67,35,68,0.50);
+}
+
+    /* Used devtools to understand why button was keeping default bootstrap styles when pressed */
+    /* Added below custom style to ensure project color scheme is adhered to */
+.btn-primary:not(:disabled):not(.disabled):active {
+    background: -o-linear-gradient(255deg, #704271, #573158, #512a52);
+    background: linear-gradient(195deg, #704271, #573158, #512a52);
+    border: none;
+    text-shadow: -1px 0 #6b3f6c, 0 1px #6b3f6c, 1px 0 #6b3f6c, 0 -1px #6b3f6c;
+    -webkit-box-shadow: inset -3px -3px 10px 0 rgba(171, 171, 171, 0.1), inset 3px 3px 10px 0 rgba(67,35,68,0.50) !important;
+    box-shadow: inset -3px -3px 10px 0 rgba(171, 171, 171, 0.1), inset 3px 3px 10px 0 rgba(67,35,68,0.50) !important;
+}
+
     /* Bootstrap components custom styling */
     /* Cards styled inline with Application theme */
 .card {
@@ -244,6 +344,24 @@ footer .row {
     box-shadow: -6px -6px 15px 0 rgba(255, 233, 37, 0.15), 10px 10px 15px 0 rgb(40, 40, 40);
 }
 
+/* Login & Registration pages */
+
+.reg-login-link a {
+    font-family: "lato", sans-serif;
+    font-style: italic;
+    color: rgba(222, 222, 222, 0.9);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(222, 222, 222, 0.9);
+}
+
+.errorlist {
+    color: #ec9e9e;
+    font-style: italic;
+    list-style: none;
+    border-bottom: 1px solid #ec9e9e;
+}
+
 /* Accessibility & Privacy Policy Pages */
 
 .card-subtitle {
@@ -282,7 +400,17 @@ footer .row {
 
 /* Media queries */
 
+@media (min-width: 575px) {
+    .alert {
+        margin: 0 auto 1rem;
+    }
+}
+
 @media (min-width: 768px) {
+    .alert {
+        width: 60%;
+    }
+
     .brand-note {
         position: relative;
     }
@@ -293,5 +421,19 @@ footer .row {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+@media (min-width: 961px) {
+    .form-card {
+        width: 60%;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 991px){
+    .form-card {
+        width: 50%;
+        margin: 3rem auto 2rem;
     }
 }
