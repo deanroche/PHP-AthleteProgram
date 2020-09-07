@@ -21,7 +21,6 @@ def register(request):
 
         if reg_form.is_valid():
             user = reg_form.save()
-            login(request, user)
             messages.success(request, 'Please wait 24-hours before attempting '
                                       'to Login.')
             return redirect('index')
