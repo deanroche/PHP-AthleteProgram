@@ -9,8 +9,8 @@ from .forms import UserRegistrationForm, UserLoginForm
 def register(request):
     """
     Register User if all checks done in form validation are passed.
-    If successful, return user to Index with notification of success, else
-    display error on register.html template.
+    If successful, return user to Index with notification of success &
+    approval, else display error on register.html template.
     If User already logged in and URL injection used to navigate to
     register.html, redirect user to Index with error notification of same.
     :param request:
