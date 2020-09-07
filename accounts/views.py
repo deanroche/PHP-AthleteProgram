@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
-from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
 
@@ -21,7 +21,7 @@ def register(request):
 
         if reg_form.is_valid():
             user = reg_form.save()
-            auth.login(request, user)
+            login(request, user)
             messages.success(request, 'Please wait 24-hours before attempting '
                                       'to Login.')
             return redirect('index')
@@ -41,7 +41,7 @@ def register(request):
     return render(request, 'accounts/register.html', context)
 
 
-def login(request):
+def user_login(request):
     """
     Log user in and redirect to Index page with success message.
     If user already logged in and attempt made to navigate to login page from
@@ -52,14 +52,18 @@ def login(request):
     if request.method == 'POST':
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
-            user = auth.authenticate(
+            user = authenticate(
                 username=request.POST['username'],
                 password=request.POST['password']
             )
             if user:
-                auth.login(request, user)
-                messages.success(request, 'Successfully logged in.')
-                return redirect('index')
+                if user.is_active:
+                    login(request, user)
+                    messages.success(request, 'Successfully logged in.')
+                    return redirect('index')
+                else:
+                    messages.error(request, 'Account not processed yet. Try '
+                                            'again later!')
             else:
                 messages.error(request, 'Invalid Login details!')
                 return redirect('login')
