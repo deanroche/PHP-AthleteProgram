@@ -76,7 +76,7 @@ footer .row {
 }
 
 .additional-links-footer {
-    margin-bottom: 0;
+    margin: 1rem 0;
 }
 
 .additional-link {
@@ -93,20 +93,13 @@ footer .row {
     text-decoration: none;
 }
 
-.dev-note {
-    margin: auto 0;
-}
-
 .brand-note p {
     color: #ebf2ff;
+    font-style: italic;
 }
 
 .socials {
     margin: auto 0;
-}
-
-.social-links {
-    margin-bottom: 0.5rem;
 }
 
 .social-links li a i{
@@ -400,6 +393,12 @@ footer .row {
 
 /* Media queries */
 
+@media (min-width: 320px) {
+    .social-links {
+        margin-bottom: 1.5rem;
+    }
+}
+
 @media (min-width: 575px) {
     .alert {
         margin: 0 auto 1rem;
@@ -407,6 +406,10 @@ footer .row {
 }
 
 @media (min-width: 768px) {
+    .social-links {
+        margin-bottom: 0.5rem;
+    }
+
     .alert {
         width: 60%;
     }
