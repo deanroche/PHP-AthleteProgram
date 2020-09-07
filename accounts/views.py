@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
 
@@ -20,7 +19,7 @@ def register(request):
         reg_form = UserRegistrationForm(request.POST)
 
         if reg_form.is_valid():
-            user = reg_form.save()
+            reg_form.save()
             messages.success(request, 'Please wait 24-hours before attempting '
                                       'to Login.')
             return redirect('index')
