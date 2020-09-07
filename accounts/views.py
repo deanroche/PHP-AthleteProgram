@@ -22,7 +22,8 @@ def register(request):
         if reg_form.is_valid():
             user = reg_form.save()
             auth.login(request, user)
-            messages.success(request, 'You are now registered & logged in.')
+            messages.success(request, 'Please wait 24-hours before attempting '
+                                      'to Login.')
             return redirect('index')
 
     elif request.user.is_authenticated:
