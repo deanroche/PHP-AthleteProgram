@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'workouts.apps.WorkoutsConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
