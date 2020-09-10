@@ -3,6 +3,11 @@
 {% load static %}
 
 {% block content %}
-    <h1>Welcome</h1>
-    <a href="{% url 'workout-view' %}">View workout</a>
+    {% if user.is_authenticated %}
+        {% for workout in workouts %}
+            <a href="{% url 'workout-view' workout.id%}">click here squire</a>
+        {% endfor %}
+    {% else %}
+       {% include 'partials/_error.html' %}
+    {% endif %}
 {% endblock %}

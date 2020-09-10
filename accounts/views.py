@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
+from workouts.models import Workout
 
 
 # Views
@@ -93,8 +94,11 @@ def dashboard(request):
     :param request:
     :return:
     """
+    workouts = Workout.objects.all()
+
     context = {
-        'dashboard-page': 'active'
+        'dashboard-page': 'active',
+        'workouts': workouts
     }
 
     return render(request, 'accounts/dashboard.html', context)
