@@ -2,11 +2,57 @@
 
 {% load static %}
 
+{% block title %} Dashboard {% endblock %}
+
 {% block content %}
     {% if user.is_authenticated %}
-        {% for workout in workouts %}
-            <a href="{% url 'workout-view' workout.id%}">click here squire</a>
-        {% endfor %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="page-title">{{ user }}'s Dashboard</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">Below you will find your schedule of workouts. Click on one
+                    to be brought to the expanded view for that particular session.</p>
+                    <p class="page-desc">From us at PHP-Athlete thank you using our platform!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center brand-img">
+                    <img src="{% static 'img/logo.png' %}" alt="PHP logo" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="container workouts">
+            {% if workouts %}
+                <div class="row workouts-row">
+                    <div class="col-sm-12">
+                        <h2 class="page-subtitle text-center">Workouts</h2>
+                    </div>
+                </div>
+                {% for workout in workouts %}
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="card card-workout">
+                            <div class="card-body card-workout-body">
+                                <a href="{% url 'workout-view' workout.id%}">
+                                    <span class="div-url-overlay"></span>
+                                </a>
+                                <p class="card-workout-header">Coach: {{ workout.coach }}</p>
+                                <p class="card-workout-title">Title: {{ workout.title|truncatechars:30 }}</p>
+                                <small class="card-workout-details text-muted"># category here.....</small>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">No Workouts to show.</p>
+                </div>
+            {% endif %}
+        </div>
     {% else %}
        {% include 'partials/_error.html' %}
     {% endif %}
