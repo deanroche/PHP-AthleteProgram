@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 @receiver(pre_save, sender=User)
 def set_new_user_inactive(sender, instance, **kwargs):
     if instance._state.adding is True:
-        if User.is_superuser:
+        if instance.is_superuser:
             instance.is_active = True
         else:
             instance.is_active = False
