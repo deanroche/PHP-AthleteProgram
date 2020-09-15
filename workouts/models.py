@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Categories
@@ -20,7 +19,7 @@ class Workout(models.Model):
     """
     title = models.CharField(max_length=150)
     coach = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_posted = models.DateTimeField(default=timezone.now)
+    workout_date = models.DateField()
     category = models.CharField(max_length=25, choices=categories)
     part_a = models.TextField()
     part_b = models.TextField()

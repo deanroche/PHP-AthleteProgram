@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
 from workouts.models import Workout
+from datetime import date, timedelta
 
 
 # Views
@@ -94,7 +95,7 @@ def dashboard(request):
     :param request:
     :return:
     """
-    workouts = Workout.objects.all()
+    workouts = Workout.objects.filter(workout_date=date.today())
 
     context = {
         'dashboard-page': 'active',
