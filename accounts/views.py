@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
 from workouts.models import Workout
-from datetime import date, timedelta
+from datetime import date
 
 
 # Views
@@ -17,19 +17,16 @@ def register(request):
     :param request:
     :return:
     """
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        messages.error(request, 'You are logged in already!')
+        return redirect('index')
+    elif request.method == 'POST':
         reg_form = UserRegistrationForm(request.POST)
-
         if reg_form.is_valid():
             reg_form.save()
             messages.success(request, 'Please wait 24-hours before attempting '
                                       'to Login.')
             return redirect('index')
-
-    elif request.user.is_authenticated:
-        messages.error(request, 'You are logged in already!')
-        return redirect('index')
-
     else:
         reg_form = UserRegistrationForm()
 
@@ -49,7 +46,10 @@ def user_login(request):
     :param request:
     :return:
     """
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        messages.error(request, 'You are logged in already!')
+        return redirect('index')
+    elif request.method == 'POST':
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
             user = authenticate(
