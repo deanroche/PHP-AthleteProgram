@@ -14,8 +14,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="page-desc">Below you will find your schedule of workouts. Click on one
-                    to be brought to the expanded view for that particular session.</p>
+                    <p class="page-desc">Below you will find your scheduled workout for today.</p>
                     <p class="page-desc">From us at PHP-Athlete thank you using our platform!</p>
                 </div>
             </div>
@@ -30,19 +29,23 @@
             {% if workouts %}
                 <div class="row workouts-row">
                     <div class="col-sm-12">
-                        <h2 class="page-subtitle text-center">Workouts</h2>
+                        <h2 class="page-subtitle text-center">Today's Workout</h2>
                     </div>
                 </div>
                 {% for workout in workouts %}
-                    <div class="col-sm-12 col-lg-6">
+                    <div class="col-sm-12">
                         <div class="card card-workout">
                             <div class="card-body card-workout-body">
-                                <a href="{% url 'workout-view' workout.id%}">
-                                    <span class="div-url-overlay"></span>
-                                </a>
+{#                                <a href="{% url 'workout-view' workout.id%}">#}
+{#                                    <span class="div-url-overlay"></span>#}
+{#                                </a>#}
                                 <p class="card-workout-header">Coach: {{ workout.coach }}</p>
                                 <p class="card-workout-title">Title: {{ workout.title|truncatechars:30 }}</p>
-                                <small class="card-workout-details text-muted">{{ workout.category|capfirst }} - {{ workout.date_posted|date:'D d/m/Y' }}</small>
+                                <p>{{ workout.part_a }}</p>
+                                <p>{{ workout.part_b }}</p>
+                                <p>{{ workout.part_c }}</p>
+                                <p>{{ workout.coach_comments }}</p>
+                                <small class="card-workout-details text-muted">{{ workout.category|capfirst }} - {{ workout.workout_date|date:'D d/m/Y' }}</small>
                             </div>
                         </div>
                     </div>
