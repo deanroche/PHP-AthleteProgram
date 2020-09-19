@@ -259,7 +259,11 @@ footer .row {
     background-clip: border-box;
 }
 
-.card-header:first-child {
+.card-header, .card-header:first-child {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #5453a7;
+    border-bottom: 1px solid rgba(0,0,0,.125);
     border-radius: 1rem 1rem 0 0;
 }
 

@@ -16,9 +16,6 @@ def get_coach():
     return User.objects.get(id=1)
 
 
-print(get_coach)
-
-
 # Models
 class Workout(models.Model):
     """

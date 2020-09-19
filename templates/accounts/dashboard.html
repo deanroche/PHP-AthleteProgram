@@ -36,13 +36,16 @@
                     <div class="col-sm-12">
                         <div class="card card-workout">
                             <div class="card-body card-workout-body">
-                                <p class="card-workout-header">Coach: {{ workout.coach }}</p>
-                                <p class="card-workout-title">Title: {{ workout.title|truncatechars:30 }}</p>
+                                <p class="card-workout-title">
+                                    <span >Title:</span> {{ workout.title|truncatechars:30 }}
+                                </p>
                                 <p>{{ workout.part_a }}</p>
                                 <p>{{ workout.part_b }}</p>
                                 <p>{{ workout.part_c }}</p>
                                 <p>{{ workout.coach_comments }}</p>
-                                <small class="card-workout-details text-muted">{{ workout.category|capfirst }} - {{ workout.workout_date|date:'D d/m/Y' }}</small>
+                                <small class="card-workout-details text-muted">
+                                    {{ workout.category|capfirst }} - {{ workout.workout_date|date:'D d/m/Y' }}
+                                </small>
                             </div>
                         </div>
                     </div>
