@@ -12,13 +12,20 @@ categories = [
 ]
 
 
+def get_coach():
+    return User.objects.get(id=1)
+
+
+print(get_coach)
+
+
 # Models
 class Workout(models.Model):
     """
     Model to define the fields required to create workouts per day.
     """
     title = models.CharField(max_length=150)
-    coach = models.ForeignKey(User, on_delete=models.CASCADE)
+    coach = models.ForeignKey(User, default=get_coach, on_delete=models.CASCADE)
     workout_date = models.DateField()
     category = models.CharField(max_length=25, choices=categories)
     part_a = models.TextField()

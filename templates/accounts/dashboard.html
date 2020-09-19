@@ -36,9 +36,6 @@
                     <div class="col-sm-12">
                         <div class="card card-workout">
                             <div class="card-body card-workout-body">
-{#                                <a href="{% url 'workout-view' workout.id%}">#}
-{#                                    <span class="div-url-overlay"></span>#}
-{#                                </a>#}
                                 <p class="card-workout-header">Coach: {{ workout.coach }}</p>
                                 <p class="card-workout-title">Title: {{ workout.title|truncatechars:30 }}</p>
                                 <p>{{ workout.part_a }}</p>
