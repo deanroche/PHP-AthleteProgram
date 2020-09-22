@@ -128,7 +128,7 @@ footer .row {
 }
 
 .brand-img {
-    margin: 1rem 0 2rem;
+    margin: 2rem 0 1rem;
 }
 
 .page-title {
@@ -137,7 +137,7 @@ footer .row {
 
 .page-desc {
     font-family: 'Lato', sans-serif;
-    margin: 1rem 0 0;
+    margin: 1.3rem 0;
 }
 
 .page-separator {
@@ -154,6 +154,18 @@ footer .row {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.util-my-small {
+    margin: 2rem 0;
+}
+
+.util-mt-medium {
+    margin-top: 5rem;
+}
+
+.util-mb-small {
+    margin: 0 0 2rem;
 }
 
     /* Forms */
@@ -345,7 +357,7 @@ footer .row {
 /* Dashboard */
 
 .card-workout {
-    margin: 1rem auto 2rem;
+    margin: 1rem auto 3rem;
 }
 
 .card-workout-header {
