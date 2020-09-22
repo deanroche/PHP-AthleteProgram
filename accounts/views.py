@@ -71,7 +71,7 @@ def user_login(request):
         login_form = UserLoginForm()
 
     context = {
-        'login-page': 'active',
+        'login_page': 'active',
         'form': login_form
     }
     return render(request, 'accounts/login.html', context)
@@ -98,7 +98,7 @@ def dashboard(request):
     workouts = Workout.objects.filter(workout_date=date.today())
 
     context = {
-        'dashboard-page': 'active',
+        'dash_page': 'active',
         'workouts': workouts
     }
 

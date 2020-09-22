@@ -27,24 +27,23 @@
 
         <div class="container workouts">
             {% if workouts %}
-                <div class="row workouts-row">
-                    <div class="col-sm-12">
-                        <h2 class="page-subtitle text-center">Today's Workout</h2>
-                    </div>
-                </div>
                 {% for workout in workouts %}
                     <div class="col-sm-12">
                         <div class="card card-workout">
-                            <div class="card-body card-workout-body">
-                                <p class="card-workout-title">
-                                    <span >Title:</span> {{ workout.title|truncatechars:30 }}
-                                </p>
-                                <p>{{ workout.part_a }}</p>
-                                <p>{{ workout.part_b }}</p>
-                                <p>{{ workout.part_c }}</p>
-                                <p>{{ workout.coach_comments }}</p>
-                                <small class="card-workout-details text-muted">
-                                    {{ workout.category|capfirst }} - {{ workout.workout_date|date:'D d/m/Y' }}
+                            <div class="card-header card-workout-header">
+                                <h4>{{ workout.workout_date|date:'l' }}'s Workout</h4>
+                            </div>
+                            <div class="card-body card-workout-body text-center">
+                                <p class="cwb-label">Part A:</p>
+                                <div class="cwb-text">{{ workout.part_a|linebreaks }}</div>
+                                <p class="cwb-label">Part B:</p>
+                                <div class="cwb-text">{{ workout.part_b|linebreaks }}</div>
+                                <p class="cwb-label">Part C:</p>
+                                <div class="cwb-text">{{ workout.part_c|linebreaks }}</div>
+                                <p class="cwb-label">Coach Notes:</p>
+                                <div class="cwb-text">{{ workout.coach_comments|linebreaks }}</div>
+                                <small class="text-muted">
+                                    {{ workout.category|capfirst }} - {{ workout.workout_date|date:'d/m/Y' }}
                                 </small>
                             </div>
                         </div>
