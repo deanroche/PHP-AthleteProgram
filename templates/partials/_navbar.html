@@ -23,6 +23,11 @@
                 <li class="nav-item {{ dash_page }}">
                     <a class="nav-link" aria-label="Dashboard" href="{% url 'dashboard' %}">Dashboard</a>
                 </li>
+                {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-label="Admin" href="{% url 'admin:index' %}">Admin</a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" aria-label="Logout" href="{% url 'logout' %}">Logout</a>
                 </li>

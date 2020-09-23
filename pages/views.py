@@ -17,3 +17,7 @@ def accessibility(request):
 
 def privacy(request):
     return render(request, 'pages/privacy.html')
+
+
+def admin(request):
+    return render(request, 'admin')
