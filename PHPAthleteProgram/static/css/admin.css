@@ -1,0 +1,83 @@
+/* Global Styles used through application */
+
+    /* Font imports */
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed&display=swap');
+
+    /* Margin & Padding reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #323232;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 16px;
+}
+
+/* Navbar */
+
+#header {
+    background-color: #323232;
+    border-bottom: 1px solid #282828;
+}
+
+#header strong {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.navbar-brand img {
+    max-height: 3.2rem;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 1rem 0 1.5rem;
+}
+
+/* Main content ~ admin:index */
+
+.dashboard #content {
+    width: auto;
+    margin-right: 0;
+}
+
+#content h1 {
+    color: #ebf2ff;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background-color: #512a52;
+}
+
+th, td {
+    background-color: #323232;
+    color: #ebf2ff;
+    border-bottom: 1px solid #ebf2ff;
+}
+
+a:link, a:visited {
+    color: #ebf2ff;
+}
+
+#content-related {
+    display: none;
+}
+
+/* Media Queries */
+
+@media (min-width: 1025px) {
+
+    /* Navbar */
+    .navbar-brand img {
+        margin: 1rem 0;
+    }
+
+    /* Main content ~ admin:index */
+    #content h1 {
+        text-align: left;
+    }
+}

@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block branding %}
+    <div id="head">
+        <!-- Logo -->
+        <a class="navbar-brand" aria-label="Brand Logo & Link to refresh" href="{% url 'index' %}">
+            <img src="{% static 'img/logo.png' %}" alt="Logo" title="PHP Logo">
+        </a>
+    </div>
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
