@@ -149,3 +149,7 @@ STATICFILES_DIRS = [
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+# Setting Default Logout redirect to index.html to prevent admin personnel
+# from being redirected to administration login page.
+LOGOUT_REDIRECT_URL = '/'
