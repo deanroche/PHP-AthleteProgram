@@ -18,7 +18,7 @@ body {
 
 /* Navbar */
 
-#header {
+#header, div .breadcrumbs {
     background-color: #323232;
     border-bottom: 1px solid #282828;
 }
@@ -34,6 +34,16 @@ body {
     display: inline-block;
     vertical-align: middle;
     margin: 1rem 0 1.5rem;
+}
+
+.toggle-nav-sidebar {
+    background-color: #323232;
+    color: #ebf2ff;
+}
+
+#nav-sidebar {
+    border-right: 1px solid #282828;
+    background-color: #323232;
 }
 
 /* Main content ~ admin:index */
@@ -65,6 +75,28 @@ a:link, a:visited {
 
 #content-related {
     display: none;
+}
+
+/* Main Content ~ admin:workouts */
+
+#changelist table thead th.action-checkbox-column,
+#changelist table thead th {
+    background-color: #512a52;
+    color: #ebf2ff;
+}
+
+.column-__str__ .text::after {
+    content: 'Click this checkbox to select all.';
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.main #changelist .actions, #content-main .module .paginator {
+    background-color: #323232;
+    color: #ebf2ff;
 }
 
 /* Media Queries */
