@@ -117,6 +117,35 @@ a:link, a:visited {
     color: #212121;
 }
 
+/* Main Content ~ admin:workouts */
+
+#workout_form .module {
+    background: transparent;
+}
+
+.module .form-row label.required {
+    color: #ebf2ff;
+    font-weight: normal;
+}
+
+.module input, .module textarea, .module select {
+    background: #393939;
+    color: #ebf2ff;
+}
+
+span.timezonewarning {
+    font-style: italic;
+    color: #ebf2ff;
+    margin-top: 5px;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+#content-main .submit-row {
+    background: transparent;
+    border: none;
+}
+
 /* Media Queries */
 
 @media (min-width: 1025px) {
