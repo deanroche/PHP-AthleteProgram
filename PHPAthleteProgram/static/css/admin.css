@@ -36,6 +36,11 @@ body {
     margin: 1rem 0 1.5rem;
 }
 
+#user-tools a:focus, #user-tools a:hover {
+    border-bottom-color: #ffe279;
+    color: #ffe279;
+}
+
 .toggle-nav-sidebar {
     background-color: #323232;
     color: #ebf2ff;
@@ -97,6 +102,19 @@ a:link, a:visited {
 .main #changelist .actions, #content-main .module .paginator {
     background-color: #323232;
     color: #ebf2ff;
+}
+
+#content-main .object-tools a, #content-main .object-tools a {
+    background-color: #512a52;
+    padding-top: 4px;
+}
+
+#content-main .object-tools a:focus, #content-main .object-tools a:hover {
+    background-color: #744275;
+}
+
+.success a {
+    color: #212121;
 }
 
 /* Media Queries */
