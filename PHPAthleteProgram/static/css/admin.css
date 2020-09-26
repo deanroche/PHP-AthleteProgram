@@ -82,6 +82,45 @@ a:link, a:visited {
     display: none;
 }
 
+/* Main Content ~ admin:group */
+
+#content-main .module {
+    background: transparent;
+}
+
+#content-main .module #toolbar {
+    background: transparent;
+}
+
+/* Main Content ~ admin:user */
+
+#changelist-search .quiet, #changelist-search a.quiet:link, #changelist-search a.quiet:visited {
+    color: #ebf2ff;
+}
+
+#content-main #changelist .actions select {
+    color: #ebf2ff;
+    background: #323232;
+}
+
+#result_list thead th a:link, #result_list thead th a:visited {
+    color: #ebf2ff;
+}
+
+.module #changelist-filter {
+    background: transparent;
+}
+
+.module #changelist-filter #changelist-filter-clear a,
+.module #changelist-filter h3,
+.module #changelist-filter ul li a {
+    color: #ebf2ff;
+}
+
+.module #changelist-filter ul li.selected a {
+    color: #ffe279;
+}
+
 /* Main Content ~ admin:workouts */
 
 #changelist table thead th.action-checkbox-column,
