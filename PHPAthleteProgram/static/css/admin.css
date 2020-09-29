@@ -51,6 +51,24 @@ body {
     background-color: #323232;
 }
 
+/* Global Componenets ~ buttons */
+
+.submit-row input {
+    background: #764377;
+}
+
+.submit-row input.default {
+    background: #5a305b;
+}
+
+.submit-row input:hover, .submit-row input:focus, .submit-row input:active {
+    background: #5a305b;
+}
+
+.submit-row input.default:hover, .submit-row input.default:focus, .submit-row input.default:active {
+    background: #512a52;
+}
+
 /* Main content ~ admin:index */
 
 .dashboard #content {
@@ -90,6 +108,25 @@ a:link, a:visited {
 
 #content-main .module #toolbar {
     background: transparent;
+}
+
+#changelist #toolbar form #searchbar {
+    color: #ebf2ff;
+}
+
+/* Main Content ~ admin:group/add */
+
+.field-permissions label {
+    color: #ebf2ff;
+}
+
+.selector-available #id_permissions_filter {
+    background: transparent;
+}
+
+.related-widget-wrapper .selector .selector-available h2, .selector .selector-chosen h2 {
+    background: #512a52;
+    color: #ebf2ff;
 }
 
 /* Main Content ~ admin:user */
