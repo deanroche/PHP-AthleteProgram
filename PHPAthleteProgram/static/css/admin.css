@@ -51,7 +51,7 @@ body {
     background-color: #323232;
 }
 
-/* Global Componenets ~ buttons */
+/* Global Components ~ buttons */
 
 .submit-row input {
     background: #764377;
@@ -164,6 +164,10 @@ a:link, a:visited {
 #changelist table thead th {
     background-color: #512a52;
     color: #ebf2ff;
+}
+
+.results #result_list thead th a:focus, .results #result_list thead th a:hover {
+    background: #462547;
 }
 
 .column-__str__ .text::after {
