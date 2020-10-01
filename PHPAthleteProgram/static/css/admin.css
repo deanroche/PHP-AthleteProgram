@@ -158,6 +158,20 @@ a:link, a:visited {
     color: #ffe279;
 }
 
+/* Main Content ~ admin:users/user */
+
+.module .form-row label {
+    color: #ebf2ff;
+    font-weight: normal;
+}
+
+/* Main Content ~ admin:history */
+
+#change-history thead tr th {
+    background: #512a52;
+    color: #ebf2ff;
+}
+
 /* Main Content ~ admin:workouts */
 
 #changelist table thead th.action-checkbox-column,
@@ -197,7 +211,7 @@ a:link, a:visited {
     color: #212121;
 }
 
-/* Main Content ~ admin:workouts */
+/* Main Content ~ admin:workouts/workout */
 
 #workout_form .module {
     background: transparent;
