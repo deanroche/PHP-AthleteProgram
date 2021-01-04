@@ -371,6 +371,15 @@ footer .row {
     font-size: 1.2rem;
 }
 
+.cwb-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 10px;
+    background: #d2cccc;
+    margin: 0 auto 1rem;
+}
+
 .cwb-text::after {
     content: '';
     display: block;

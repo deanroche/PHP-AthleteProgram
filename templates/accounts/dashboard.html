@@ -15,6 +15,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <p class="page-desc">Below you will find your scheduled workout for today.</p>
+                    <p class="page-desc">Click on the appropriate modality to expand and see the workout.</p>
                     <p class="page-desc">From us at PHP-Athlete thank you using our platform!</p>
                 </div>
             </div>
@@ -29,22 +30,29 @@
             {% if workouts %}
                 {% for workout in workouts %}
                     <div class="col-sm-12">
-                        <div class="card card-workout">
-                            <div class="card-header card-workout-header">
-                                <h4>{{ workout.workout_date|date:'l' }}'s Workout</h4>
-                            </div>
-                            <div class="card-body card-workout-body text-center">
-                                <p class="cwb-label">Part A:</p>
-                                <div class="cwb-text">{{ workout.part_a|linebreaks }}</div>
-                                <p class="cwb-label">Part B:</p>
-                                <div class="cwb-text">{{ workout.part_b|linebreaks }}</div>
-                                <p class="cwb-label">Part C:</p>
-                                <div class="cwb-text">{{ workout.part_c|linebreaks }}</div>
-                                <p class="cwb-label">Coach Notes:</p>
-                                <div class="cwb-text">{{ workout.coach_comments|linebreaks }}</div>
-                                <small class="text-muted">
-                                    {{ workout.category|capfirst }} - {{ workout.workout_date|date:'d/m/Y' }}
-                                </small>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card card-workout">
+                                <div class="card-header card-workout-header collapsed" id="workout-{{ workout.category }}" data-toggle="collapse"
+                                     data-target="#collapse-{{ workout.category }}" aria-expanded="false" aria-controls="collapse-{{ workout.category }}">
+                                    <h4 class="expand-card-header">
+                                            {{ workout.category|capfirst }}
+                                    </h4>
+                                </div>
+                                <div id="collapse-{{ workout.category }}" class="collapse" aria-labelledby="workout-{{ workout.category }}" data-parent="#accordionExample">
+                                    <div class="card-body card-workout-body text-center">
+                                        <p class="cwb-label">Part A:</p>
+                                        <div class="cwb-text">{{ workout.part_a|linebreaks }}</div>
+                                        <p class="cwb-label">Part B:</p>
+                                        <div class="cwb-text">{{ workout.part_b|linebreaks }}</div>
+                                        <p class="cwb-label">Part C:</p>
+                                        <div class="cwb-text">{{ workout.part_c|linebreaks }}</div>
+                                        <p class="cwb-label">Coach Notes:</p>
+                                        <div class="cwb-text">{{ workout.coach_comments|linebreaks }}</div>
+                                        <small class="text-muted">
+                                            {{ workout.category|capfirst }} - {{ workout.workout_date|date:'d/m/Y' }}
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
