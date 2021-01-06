@@ -5,5 +5,48 @@
 {% block title %} Contact {% endblock %}
 
 {% block content %}
-    <h1>Welcome to Contact</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-title text-center">Contact Us</h1>
+            </div>
+            <div class="col-sm-12">
+                <p class="page-desc text-center">Have something to ask us? Use the below form to ask us anything, from us being able to offer you something,
+                to if you have something that you can offer us. Once we receive the email we will review and be back to ASAP!</p>
+                <p class="page-desc text-center">Please ensure to fill out the form in its entirety as it helps us direct your queries to the correct channels.
+                Please make sure you use a Valid Email address if you are a Public Un-Logged User as without it we will have no method of contacting you back.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center page-separator">
+                <img class="img-fluid" src="{% static 'img/logo.png' %}" alt="PHP Logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- Page/Form alerts for user visibility, injected via Jinja as template -->
+    {% include 'partials/_alerts.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-paper-plane"></i> Get in Touch!</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form fields are without labels to be consistent with modern app design UX themes. -->
+                        <form action="{% url 'contact' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ form }}
+                            </div>
+                            <input type="submit" value="Send" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
