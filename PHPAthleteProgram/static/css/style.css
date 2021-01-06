@@ -63,6 +63,10 @@ body {
     border-color: transparent;
 }
 
+.mail-alert {
+    color: #ffe279;
+}
+
 /* Footer */
 
 footer {

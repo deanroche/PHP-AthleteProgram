@@ -12,6 +12,8 @@ def contact(request):
     else User is prompted to enter name.
     Form on Submit saved in DB for Admin view.
     """
+    unread_mail = Contact.objects.filter(read_status=False).count()
+
     if request.method == 'POST':
         if request.user.is_authenticated:
             create_contact_form = Contact(
@@ -34,7 +36,8 @@ def contact(request):
         return redirect('index')
 
     context = {
-        'form': ContactForm
+        'form': ContactForm,
+        'unread_count': unread_mail
     }
 
     return render(request, 'contact/contact.html', context)

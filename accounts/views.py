@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserLoginForm
 from workouts.models import Workout
+from contact.models import Contact
 from datetime import date
 
 
@@ -96,10 +97,12 @@ def dashboard(request):
     :return:
     """
     workouts = Workout.objects.filter(workout_date=date.today())
+    unread_mail = Contact.objects.filter(read_status=False).count()
 
     context = {
         'dash_page': 'active',
-        'workouts': workouts
+        'workouts': workouts,
+        'unread_count': unread_mail,
     }
 
     return render(request, 'accounts/dashboard.html', context)

@@ -8,7 +8,8 @@ class Contact(models.Model):
     """Contact Model"""
     contact_title = models.CharField(max_length=150)
     contact_body = models.TextField()
-    contact_name = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    contact_name = models.ForeignKey(User, null=True,
+                                     blank=True, on_delete=models.CASCADE)
     contact_email = models.EmailField()
     contact_date = models.DateTimeField(default=timezone.now)
     read_status = models.BooleanField(default=False)

@@ -25,7 +25,9 @@
                 </li>
                 {% if user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link" aria-label="Admin" href="{% url 'admin:index' %}">Admin</a>
+                        <a class="nav-link" aria-label="Admin" href="{% url 'admin:index' %}">
+                            Admin {% if unread_count != 0 %}<sup class="mail-alert"><i class="fas fa-envelope"></i> {{ unread_count }}</sup>{% endif %}
+                        </a>
                     </li>
                 {% endif %}
                 <li class="nav-item">
