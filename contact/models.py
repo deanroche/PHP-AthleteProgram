@@ -15,6 +15,4 @@ class Contact(models.Model):
     read_status = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.contact_name}, ' \
-               f'{self.contact_date.strftime("%d/%m/%Y @ %H:%M")}, Title: ' \
-               f'{self.contact_title}'
+        return f'{self.contact_name}'
