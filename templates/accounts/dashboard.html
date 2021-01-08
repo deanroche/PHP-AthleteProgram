@@ -32,13 +32,13 @@
                     <div class="col-sm-12">
                         <div class="accordion" id="accordionExample">
                             <div class="card card-workout">
-                                <div class="card-header card-workout-header collapsed" id="workout-{{ workout.category }}" data-toggle="collapse"
-                                     data-target="#collapse-{{ workout.category }}" aria-expanded="false" aria-controls="collapse-{{ workout.category }}">
+                                <div class="card-header card-workout-header collapsed" id="workout-{{ workout.id }}" data-toggle="collapse"
+                                     data-target="#collapse-{{ workout.id }}" aria-expanded="false" aria-controls="collapse-{{ workout.id }}">
                                     <h4 class="expand-card-header">
                                             {{ workout.category|capfirst }}
                                     </h4>
                                 </div>
-                                <div id="collapse-{{ workout.category }}" class="collapse" aria-labelledby="workout-{{ workout.category }}" data-parent="#accordionExample">
+                                <div id="collapse-{{ workout.id }}" class="collapse" aria-labelledby="workout-{{ workout.id }}" data-parent="#accordionExample">
                                     <div class="card-body card-workout-body text-center">
                                         <p class="cwb-label">Part A:</p>
                                         <div class="cwb-text">{{ workout.part_a|linebreaks }}</div>
