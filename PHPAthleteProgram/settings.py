@@ -33,7 +33,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'php-athlete.herokuapp.com'
+    'php-athlete.herokuapp.com',
+    'thephpprogram.herokuapp.com',
+    'http://www.thephpprogram.com',
+    'https://www.thephpprogram.com'
 ]
 
 # Application definition
