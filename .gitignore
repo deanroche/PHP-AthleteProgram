@@ -4,3 +4,5 @@ __pycache__/
 env.py
 db.sqlite3
 /static
+.venv/
+.vscode/
